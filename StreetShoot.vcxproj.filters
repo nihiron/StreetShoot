@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ResourceCompile Include="resource.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="WIND.cpp" />
+    <ClCompile Include="STICKY_BLOCK.cpp" />
+    <ClCompile Include="SPRING.cpp" />
+    <ClCompile Include="PLAYER.cpp" />
+    <ClCompile Include="origin.cpp" />
+    <ClCompile Include="ONEUP.cpp" />
+    <ClCompile Include="MAP.cpp" />
+    <ClCompile Include="MANAGER_CharaManager.cpp" />
+    <ClCompile Include="JETPACK.cpp" />
+    <ClCompile Include="IMG.cpp" />
+    <ClCompile Include="GOAL.cpp" />
+    <ClCompile Include="GAME.cpp" />
+    <ClCompile Include="DEFFENDER.cpp" />
+    <ClCompile Include="CONTAINER_MANAGER.cpp" />
+    <ClCompile Include="COIN.cpp" />
+    <ClCompile Include="CHARA_MANAGER.cpp" />
+    <ClCompile Include="CHARA.cpp" />
+    <ClCompile Include="BALL.cpp" />
+    <ClCompile Include="ANIM.cpp" />
+    <ClCompile Include="02 Basic.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="WIND.h" />
+    <ClInclude Include="TITLE_LOGO.h" />
+    <ClInclude Include="TITLE.h" />
+    <ClInclude Include="STICKEY_BLOCK.h" />
+    <ClInclude Include="SPRING.h" />
+    <ClInclude Include="PLAYER.h" />
+    <ClInclude Include="origin.h" />
+    <ClInclude Include="ONEUP.h" />
+    <ClInclude Include="MAP.h" />
+    <ClInclude Include="MANAGER_CharaManager.h" />
+    <ClInclude Include="JETPACK.h" />
+    <ClInclude Include="IMG.h" />
+    <ClInclude Include="GOAL.h" />
+    <ClInclude Include="GAMEOVER.h" />
+    <ClInclude Include="GAME.h" />
+    <ClInclude Include="FEED.h" />
+    <ClInclude Include="FAILED.h" />
+    <ClInclude Include="ENDING.h" />
+    <ClInclude Include="DUNGEON.h" />
+    <ClInclude Include="DEFFENDER.h" />
+    <ClInclude Include="CONTAINER_MANAGER.h" />
+    <ClInclude Include="CONTAINER.h" />
+    <ClInclude Include="COIN.h" />
+    <ClInclude Include="CLEAR.h" />
+    <ClInclude Include="CHARA_MANAGER.h" />
+    <ClInclude Include="CHARA.h" />
+    <ClInclude Include="BALL.h" />
+    <ClInclude Include="BACKGROUND.h" />
+    <ClInclude Include="ANIM.h" />
+  </ItemGroup>
+</Project>
