@@ -143,7 +143,13 @@ void GAME::title() {//----------------------------------------------------------
 		command = 7;
 		wff = 90;
 	}
-
+#ifdef DEBUG
+	if (isTrigger(KEY_G)) {
+		wff = 90;
+		stageno = 1000;
+		command = 0;
+	}
+#endif // DEBUG
 
 	if (isTrigger(KEY_X) && wff == 0) {
 		stageno = 1;
@@ -547,9 +553,11 @@ void GAME::mapChange(int flag) {//----------------------------------------------
 	case 55:
 		map->init(C->stage55, stageno);
 		break;
+#ifdef DEBUG
 	case 100:
 		map->init(C->testmap, stageno);
 		break;
+#endif // DEBUG
 	}
 	CHARA_MANAGER* CharaManager = MANAGER_CharaManager::getInstance();
 	CharaManager->init();

@@ -1,1 +1,2 @@
 MYICON      ICON    "../framework/joypad.ico"
+TITLE		IMAGE	"data/2Dgraphics/title.png"

@@ -86,23 +86,6 @@ struct COIN_DATA {
 	char CoinId;
 };
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 struct ALL_DATA {
 	SYSTEM_DATA system;
 	PLAYER_DATA player;
@@ -225,132 +208,6 @@ struct ALL_DATA {
 
 class CONTAINER {
 public:
-	////title
-	//IMAGEDATA title;
-	////titlelogo
-	//IMAGEDATA titlelogo;
-	////backGROUND
-	//IMAGEDATA back;
-	////clear
-	//IMAGEDATA clear{
-	//	clear.Img = 0,
-	//	clear.Px = 1920 / 2 - 200,
-	//	clear.Py = 1080 / 2 - 150
-	//};
-	////failed
-	//IMAGEDATA failed{
-	//	failed.Img,
-	//	failed.Px = 1920 / 2 - 200,
-	//	failed.Py = 1080 / 2 - 150
-	//};
-	////gameover
-	//IMAGEDATA gameover{
-	//	gameover.Img,
-	//	gameover.Px = 1920 / 2 - 200,
-	//	gameover.Py = 1080 / 2 - 150
-	//};
-	////clear
-	//IMAGEDATA clear{
-	//	clear.Img = 0,
-	//	clear.Px = ad.system.WindowWidth / 2 - 200,
-	//	clear.Py = ad.system.WindowHeight / 2 - 150
-	//};
-	////failed
-	//IMAGEDATA failed{
-	//	failed.Img,
-	//	failed.Px = ad.system.WindowWidth / 2 - 200,
-	//	failed.Py = ad.system.WindowHeight / 2 - 150
-	//};
-	////gameover
-	//IMAGEDATA gameover{
-	//	gameover.Img,
-	//	gameover.Px = ad.system.WindowWidth / 2 - 200,
-	//	gameover.Py = ad.system.WindowHeight / 2 - 150
-	//};
-	////dungeon
-	//IMAGEDATA dungeon;
-	////ending
-	//IMAGEDATA ending;
-	////const int endingframe = 10800;
-	////feed
-	//IMAGEDATA feed;
-
-	////SYSTEM--------------------------------------------------------
-	//const char* WindowTitle = "Street_Shoot";
-	//const int WindowWidth = 1920;
-	//const int WindowHeight = 1080;
-	//
-	//int PowerbarImg = 0;
-	//const int PowerBarheight = 32;
-	//const float OffsetPx = 30.0f;
-	//const float OffsetPy = 30.0f;
-	//const float RADIAN = 3.141592f / 180;
-	//
-	////PLAYER
-	//int BodyImg = 0;
-	//int LArmImg = 0;
-	//int RArmImg = 0;
-	//int PowerGaugeImg = 0;
-	//float UpperArmsoffsetPx = 45;
-	//float UpperArmsoffsetPy = 5;
-	//
-	//float DownerArmsoffsetPx = 35;
-	//float DownerArmsoffsetPy = 5;
-	//
-	//const float PlayeroffsetPy = 7;
-	//const float MaxPower = 17.0f;
-	//
-	//const int PlayersNum = 1;
-	//
-	//const char PlayerId = 'p';
-	//const float Playeralloweddistance = 70.0f;
-	//
-	////BALL
-	//int BallImg = 0;
-	//const int BallsNum = 1;
-	//const float InitialPx = -50;
-	//const float InitialPy = -2000;
-	//const float Gravity = 0.205f;
-	//const int NotMoveCnt = 180;
-	//const int ReCollisionCnt = 5;//再判定するまでのフレーム数
-	//
-	//const char BallId = 'b';
-	//
-	////DEFENDER
-	//int DeffenderImg = 0;
-	//const char DeffenderId = 'd';
-	//
-	////SPRING
-	//int SpringImg = 0;
-	//const char SpringId = 's';
-	//
-	////WIND
-	//int WindImg = 0;
-	//const float Windturn = 0.5f;
-	//const int Windpercent = 10;
-	////Wind Change Percent Interval 切り替え判定までのフレーム
-	//const int WCPInterval = 300;
-	//const char WindId = 'w';
-	//
-	////GOAL
-	//int GoalImg = 0;
-	//const char GoalId = 'g';
-	//
-	////STICKY_BLOCK
-	//int StickeyImg = 0;
-	//const char StickeyId = 'n';
-	//
-	////JET_PACK
-	//int JetImg = 0;
-	//const char JetId = 'j';
-	//
-	////1UP
-	//int OneupImg = 0;
-	//const char OneupId = 'o';
-	//
-	////COIN
-	//int CoinImg = 0;
-	//const char CoinId = 'c';
 
 	//MAP
 	const char* testmap = "data/testmap.txt";
@@ -410,8 +267,20 @@ private:
 		ad.stickey.StickeyImg = loadImage("adhesive.png");
 		ad.jet.JetImg = loadImage("jetpack.png");
 		ad.one.OneupImg = loadImage("basketball.png");
-
 		blockImg = loadImage("tetu.png");
+		//ad.player.BodyImg = loadImageFromRes(PLAYER);
+		//ad.player.LArmImg = loadImageFromRes(LARM);
+		//ad.player.RArmImg = loadImageFromRes(RARM);
+		//ad.ball.BallImg = loadImageFromRes(BALL);
+		//ad.deffender.DeffenderImg = loadImageFromRes(DEFFENDER);
+		//ad.spring.SpringImg = loadImageFromRes(SPRING);
+		//ad.wind.WindImg = loadImageFromRes(WIND);
+		//ad.goal.GoalImg = loadImageFromRes(GOAL);
+		//ad.coin.CoinImg = loadImageFromRes(MEDAL);
+		//ad.stickey.StickeyImg = loadImageFromRes(STICKEY);
+		//ad.jet.JetImg = loadImageFromRes(JET);
+		//ad.one.OneupImg = loadImageFromRes(ONEUP);
+		//blockImg = loadImageFromRes(BLOCK);
 
 		//背景とロゴ
 		ad.title.Img = loadImage("title.png");
@@ -422,25 +291,27 @@ private:
 		ad.failed.Img = loadImage("failed.png");
 		ad.gameover.Img = loadImage("GAME_OVER.png");
 		ad.ending.Img = loadImage("ending.png");
+		//ad.title.Img = loadImageFromRes(TITLE);
+		//ad.titlelogo.Img = loadImageFromRes(TITLE_LOGO);
+		//ad.back.Img = loadImageFromRes(BACK);
+		//ad.dungeon.Img = loadImageFromRes(DUNGEON);
+		//ad.clear.Img = loadImageFromRes(CLEAR);
+		//ad.failed.Img = loadImageFromRes(FAILED);
+		//ad.gameover.Img = loadImageFromRes(GAMEOVER);
+		//ad.ending.Img = loadImageFromRes("ENDING);
+
 
 		//フェード
 		ad.feed.Img = loadImage("effect_feed.png");
-		//ad.title.Img = loadImage("title.png");
-		//ad.titlelogo.Img = loadImage("Title_Logo.png");
-		//ad.back.Img = loadImage("backGround1.png");
-		//ad.dungeon.Img = loadImage("dungeon1.png");
-		//ad.clear.Img = loadImage("Stage_Clear.png");
-		//ad.failed.Img = loadImage("failed.png");
-		//ad.gameover.Img = loadImage("GAME_OVER.png");
-		//ad.ending.Img = loadImage("ending.png");
-
-		////フェード
-		//ad.feed.Img = loadImage("effect_feed.png");
+		//ad.feed.Img = loadImageFromRes(FEED);
 
 		//システム系
 		ad.system.PowerBarImg = loadImage("powerbar.png");
 		arrowImg = loadImage("ya.png");
 		ad.system.PowerGaugeImg = loadImage("Gauge_Bar_1.png");
+		//ad.system.PowerBarImg = loadImageFromRes(BAR);
+		//arrowImg = loadImageFromRes(ARROW);
+		//ad.system.PowerGaugeImg = loadImageFromRes(GAUGE);
 
 		//LOADSOUND
 		titleBgm 	 = loadSound("midnightmoon.wav");
@@ -459,91 +330,3 @@ private:
 	}
 	friend class CONTAINER_MANAGER;
 };
-//struct ALL_DATA {
-//	SYSTEM_DATA system{
-//	system.WindowTitle = 0,
-//	system.WindowWidth = 0,
-//	system.WindowHeight = 0,
-//	system.PowerBarImg = 0,
-//	system.PowerGaugeImg = 0,
-//	system.PowerBarHeight = 0,
-//	system.OffsetPx = 0,
-//	system.OffsetPy = 0,
-//	system.Gravity = 0,
-//	system.RADIAN = 0
-//	};
-//	PLAYER_DATA player{
-//	player.BodyImg = 0,
-//	player.LArmImg = 0,
-//	player.RArmImg = 0,
-//	player.PowergaugeImg = 0,
-//	player.UpperArmsOffsetPx = 0,
-//	player.UpperArmsOffsetPy = 0,
-//	player.DownerArmsOffsetPx = 0,
-//	player.DownerArmsOffsetPy = 0,
-//	player.PlayerOffsetPy = 0,
-//	player.MaxPower = 0,
-//	player.PlayersNum = 0,
-//	player.PlayerAllowedDistance = 0,
-//	player.PlayerId = 0
-//	};
-//	BALL_DATA ball{
-//	ball.BallImg = 0,
-//	ball.BallsNum = 0,
-//	ball.InitialPx = 0,
-//	ball.InitialPy = 0,
-//	ball.NotMoveCnt = 0,
-//	ball.ReCollisionCnt = 0,
-//	ball.BallId = 0				 
-//	};
-//	DEFF_DATA deffender{
-//	deffender.DeffenderImg = 0,
-//	deffender.DeffenderId = 0
-//	};
-//	SPRING_DATA spring{
-//	spring.SpringImg = 0,
-//	spring.SpringId = 0
-//	};
-//	WIND_DATA wind{
-//	wind.WindImg = 0,
-//	wind.Windturn = 0,
-//	wind.WindPercent = 0,
-//	wind.WCPInterval = 0,
-//	wind.WindId = 0
-//	};
-//	GOAL_DATA goal{
-//	goal.GoalImg = 0,
-//	goal.GoalId = 0
-//	};
-//	STICKEY_DATA stickey{
-//	stickey.StickeyImg = 0,
-//	stickey.StickeyId = 0
-//	};
-//	JET_DATA jet{
-//	jet.JetImg = 0,
-//	jet.JetId = 0
-//	};
-//	ONEUP_DATA one{
-//	one.OneupImg = 0,
-//	one.OneupId = 0
-//	};
-//	COIN_DATA coin{
-//	coin.CoinImg = 0,
-//	coin.CoinId = 0
-//	};
-//	IMAGEDATA title{ 0,0,0 };
-//	IMAGEDATA titlelogo{ 0,0,0 };
-//	IMAGEDATA back{ 0,0,0 };
-//	IMAGEDATA clear{ 0,0,0 };
-//
-//
-//	IMAGEDATA failed{ 0,0,0 };
-//
-//
-//	IMAGEDATA gameover{ 0,0,0 };
-//
-//
-//	IMAGEDATA dungeon{ 0,0,0 };
-//	IMAGEDATA ending{ 0,0,0 };
-//	IMAGEDATA feed{ 0,0,0 };
-//};
