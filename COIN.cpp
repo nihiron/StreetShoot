@@ -3,7 +3,7 @@
 
 COIN::COIN() :CHARA() {
 	CONTAINER* C = CONTAINER_MANAGER::getInstance();
-	Img = C->ad.coin.CoinImg;
+	Img = C->Handle[Coin];
 	CharaId = C->ad.coin.CoinId;
 }
 

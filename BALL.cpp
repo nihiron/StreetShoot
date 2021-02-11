@@ -8,8 +8,8 @@
 
 BALL::BALL() : CHARA() {
 	CONTAINER* C = CONTAINER_MANAGER::getInstance();
-	jetpackImg = C->ad.jet.JetImg;
-	Img = C->ad.ball.BallImg;
+	jetpackImg = C->Handle[Jet];
+	Img = C->Handle[Ball];
 	CharaId = C->ad.ball.BallId;
 	Px = 0;
 	Py = 0;
@@ -18,8 +18,8 @@ BALL::BALL() : CHARA() {
 	Gravity = C->ad.system.Gravity;
 	isnotmoveCnt = C->ad.ball.NotMoveCnt;
 	recollisionframe = C->ad.ball.ReCollisionCnt;
-	windowwidth = C->ad.system.WindowWidth;
-	windowheight = C->ad.system.WindowHeight;
+	windowwidth = C->WindowWidth;
+	windowheight = C->WindowHeight;
 
 	BoundSe = C->boundSe;
 	GoalSe = C->goalSe;

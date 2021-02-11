@@ -26,7 +26,7 @@ void CONTAINER_MANAGER::createSystemData() {
 	CONTAINER* C = CONTAINER_MANAGER::getInstance();
 	FILE* fp = 0;
 	//fopen_s(&fp, "data/systemdata.bin", "wb");
-	fopen_s(&fp, "data/SYSTEM_DATA.bin", "wb");
+	fopen_s(&fp, "data/SYSTEM_DATA.txt", "w");
 	//fwrite(&C->ad, sizeof(ALL_DATA), 58, fp);
 	fwrite(&C->ad, sizeof(ALL_DATA), 1, fp);
 	fclose(fp);

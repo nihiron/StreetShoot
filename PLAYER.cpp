@@ -8,17 +8,17 @@
 #include "origin.h"
 PLAYER::PLAYER() : CHARA() {
 	CONTAINER* C = CONTAINER_MANAGER::getInstance();
-	jetpackImg = C->ad.jet.JetImg;
-	Img = C->ad.player.BodyImg;
+	jetpackImg = C->Handle[Jet];
+	Img = C->Handle[PBody];
 	CharaId = C->ad.player.PlayerId;
-	secretImg = C->ad.ball.BallImg;
+	secretImg = C->Handle[Ball];
 	Gravity = C->ad.system.Gravity;
 	ChipSize = C->chipSize;
-	windowwidth = C->ad.system.WindowWidth;
-	windowheight = C->ad.system.WindowHeight;
+	windowwidth = C->WindowWidth;
+	windowheight = C->WindowHeight;
 
-	LarmImg = C->ad.player.LArmImg;
-	RarmImg = C->ad.player.RArmImg;
+	LarmImg = C->Handle[PLArm];
+	RarmImg = C->Handle[PRArm];
 
 	upperarmoffsetPx = C->ad.player.UpperArmsOffsetPx;
 	upperarmoffsetPy = C->ad.player.UpperArmsOffsetPy;
@@ -26,12 +26,12 @@ PLAYER::PLAYER() : CHARA() {
 	downerarmoffsetPx = C->ad.player.DownerArmsOffsetPx;
 	downerarmoffsetPy = C->ad.player.DownerArmsOffsetPy;
 
-	seemballImg = C->ad.ball.BallImg;
+	seemballImg = C->Handle[Ball];
 	offsetPy = C->ad.player.PlayerOffsetPy;
 
 	arrowImg = C->arrowImg;
-	powerbarImg = C->ad.system.PowerBarImg;
-	powergaugeImg = C->ad.system.PowerGaugeImg;
+	powerbarImg = C->Handle[PowerBar];
+	powergaugeImg = C->Handle[PowerGauge];
 	powersize = C->ad.system.PowerBarHeight;
 	ballId = C->ad.ball.BallId;
 	Maxpower = C->ad.player.MaxPower;

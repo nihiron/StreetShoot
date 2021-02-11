@@ -32,8 +32,8 @@ MAP::MAP() {
 	BallsNum = C->ad.ball.BallsNum;
 	offsetPx = C->ad.system.OffsetPx;
 	offsetPy = C->ad.system.OffsetPy;
-	windowwidth = C->ad.system.WindowWidth;
-	windowheight = C->ad.system.WindowHeight;
+	windowwidth = C->WindowWidth;
+	windowheight = C->WindowHeight;
 }
 
 MAP::~MAP() {
@@ -88,8 +88,8 @@ void MAP::init(const char* Filename,int stagenum) {
 		}
 	}
 	fclose(fp);
-	if (NumDataRow * chipSize > C->ad.system.WindowHeight) {
-		Hiddenmap = NumDataRow * chipSize - C->ad.system.WindowHeight;
+	if (NumDataRow * chipSize > C->WindowHeight) {
+		Hiddenmap = NumDataRow * chipSize - C->WindowHeight;
 	}
 }
 

@@ -3,7 +3,7 @@
 
 ONEUP::ONEUP() : CHARA() {
 	CONTAINER* C = CONTAINER_MANAGER::getInstance();
-	Img = C->ad.ball.BallImg;
+	Img = C->Handle[Oneup];
 	CharaId = C->ad.one.OneupId;
 	Blue = 0.5f;
 	Green = 1.0f;

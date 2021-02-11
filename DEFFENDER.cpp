@@ -3,7 +3,7 @@
 
 DEFFENDER::DEFFENDER() : CHARA() {
 	CONTAINER* C = CONTAINER_MANAGER::getInstance();
-	Img = C->ad.deffender.DeffenderImg;
+	Img = C->Handle[Deffender];
 	CharaId = C->ad.deffender.DeffenderId;
 }
 

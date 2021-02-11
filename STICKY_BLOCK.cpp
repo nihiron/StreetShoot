@@ -3,7 +3,7 @@
 
 STICKY_BLOCK::STICKY_BLOCK() :CHARA() {
 	CONTAINER* C = CONTAINER_MANAGER::getInstance();
-	Img = C->ad.stickey.StickeyImg;
+	Img = C->Handle[Stickey];
 	CharaId = C->ad.stickey.StickeyId;
 }
 

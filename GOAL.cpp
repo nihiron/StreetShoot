@@ -3,7 +3,7 @@
 
 GOAL::GOAL() :CHARA() {
 	CONTAINER* C = CONTAINER_MANAGER::getInstance();
-	Img = C->ad.goal.GoalImg;
+	Img = C->Handle[Goal];
 	CharaId = C->ad.goal.GoalId;
 }
 

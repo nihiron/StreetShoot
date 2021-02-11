@@ -3,7 +3,7 @@
 
 SPRING::SPRING() : CHARA() {
 	CONTAINER* C = CONTAINER_MANAGER::getInstance();
-	Img = C->ad.spring.SpringImg;
+	Img = C->Handle[Spring];
 	CharaId = C->ad.spring.SpringId;
 }
 

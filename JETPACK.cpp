@@ -3,7 +3,7 @@
 
 JETPACK::JETPACK() : CHARA() {
 	CONTAINER* C = CONTAINER_MANAGER::getInstance();
-	Img = C->ad.jet.JetImg;
+	Img = C->Handle[Jet];
 	CharaId = C->ad.jet.JetId;
 }
 

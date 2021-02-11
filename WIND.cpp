@@ -3,7 +3,7 @@
 
 WIND::WIND() : CHARA() {
 	CONTAINER* C = CONTAINER_MANAGER::getInstance();
-	Img = C->ad.wind.WindImg;
+	Img = C->Handle[Wind];
 	CharaId = C->ad.wind.WindId;
 	turn = C->ad.wind.Windturn;
 	turnchagepercent = C->ad.wind.WindPercent;

@@ -1,3 +1,4 @@
+//ストリートシュートの方のコンテナです！！！！！！！！！！
 #pragma once
 #include "framework.h"
 #include "graphic.h"
@@ -7,19 +8,41 @@
 #include <stdio.h>
 #include "CONTAINER_MANAGER.h"
 
+enum IMGS {
+	Title,
+	TitleLogo,
+	Back,
+	Clear,
+	Failed,
+	GameOver,
+	Dungeon,
+	Ending,
+	Feed,
+	TYPE_MAX_BACKS,
+	PBody,
+	PLArm,
+	PRArm,
+	Ball,
+	Deffender,
+	Spring,
+	Wind,
+	Goal,
+	Stickey,
+	Jet,
+	Oneup,
+	Coin,
+	PowerBar,
+	PowerGauge,
+	TYPE_MAX
+};
+
 struct IMAGEDATA {
-	int Img = 0;
 	int Px = 0;
 	int Py = 0;
 };
 
 //Total 49
 struct SYSTEM_DATA {
-	char* WindowTitle;
-	int WindowWidth;
-	int WindowHeight;
-	int PowerBarImg;
-	int PowerGaugeImg;
 	int PowerBarHeight;
 	float OffsetPx;
 	float OffsetPy;
@@ -27,10 +50,6 @@ struct SYSTEM_DATA {
 	float RADIAN;
 };
 struct PLAYER_DATA {
-	int BodyImg;
-	int LArmImg;
-	int RArmImg;
-	int PowergaugeImg;
 	float UpperArmsOffsetPx;
 	float UpperArmsOffsetPy;
 	float DownerArmsOffsetPx;
@@ -42,7 +61,6 @@ struct PLAYER_DATA {
 	char PlayerId;
 };
 struct BALL_DATA {
-	int BallImg;
 	int BallsNum;
 	float InitialPx;
 	float InitialPy;
@@ -51,163 +69,186 @@ struct BALL_DATA {
 	char BallId;
 };
 struct DEFF_DATA {
-	int DeffenderImg;
 	char DeffenderId;
 };
 struct SPRING_DATA {
-	int SpringImg;
 	char SpringId;
 };
 struct WIND_DATA {
-	int WindImg;
 	float Windturn;
 	int WindPercent;
 	int WCPInterval;
 	char WindId;
 };
 struct GOAL_DATA {
-	int GoalImg;
 	char GoalId;
 };
 struct STICKEY_DATA {
-	int StickeyImg;
 	char StickeyId;
 };
 struct JET_DATA {
-	int JetImg;
 	char JetId;
 };
 struct ONEUP_DATA {
-	int OneupImg;
 	char OneupId;
 };
 struct COIN_DATA {
-	int CoinImg;
 	char CoinId;
 };
 
-struct ALL_DATA {
-	SYSTEM_DATA system;
-	PLAYER_DATA player;
-	BALL_DATA ball;
-	DEFF_DATA deffender;
-	SPRING_DATA spring;
-	WIND_DATA wind;
-	GOAL_DATA goal;
-	STICKEY_DATA stickey;
-	JET_DATA jet;
-	ONEUP_DATA one;
-	COIN_DATA coin;
-	IMAGEDATA title;
-	IMAGEDATA titlelogo;
-	IMAGEDATA back;
-	IMAGEDATA clear;
-	IMAGEDATA failed;
-	IMAGEDATA gameover;
-	IMAGEDATA dungeon;
-	IMAGEDATA ending;
-	IMAGEDATA feed;
-};
-
-////ここまでのデータを統合したもの
-
 //struct ALL_DATA {
-//	SYSTEM_DATA system{
-//	system.WindowTitle = "Street_Shoot!",
-//	system.WindowWidth = 1920,
-//	system.WindowHeight = 1080,
-//	system.PowerBarImg = 0,
-//	system.PowerGaugeImg = 0,
-//	system.PowerBarHeight = 32,
-//	system.OffsetPx = 30.0f,
-//	system.OffsetPy = 30.0f,
-//	system.Gravity = 0.205f,
-//	system.RADIAN = 3.141592f / 180
-//	};
-//	PLAYER_DATA player{
-//	player.BodyImg = 0,
-//	player.LArmImg = 0,
-//	player.RArmImg = 0,
-//	player.PowergaugeImg = 0,
-//	player.UpperArmsOffsetPx = 45,
-//	player.UpperArmsOffsetPy = 5,
-//	player.DownerArmsOffsetPx = 35,
-//	player.DownerArmsOffsetPy = 5,
-//	player.PlayerOffsetPy = 7.0f,
-//	player.MaxPower = 17.0f,
-//	player.PlayersNum = 1,
-//	player.PlayerAllowedDistance = 70.0f,
-//	player.PlayerId = 'p'
-//	};
-//	BALL_DATA ball{
-//	ball.BallImg = 0,
-//	ball.BallsNum = 1,
-//	ball.InitialPx = -50.0f,
-//	ball.InitialPy = -2000.0f,
-//	ball.NotMoveCnt = 180,
-//	ball.ReCollisionCnt = 5,
-//	ball.BallId = 'b'
-//	};
-//	DEFF_DATA deffender{
-//	deffender.DeffenderImg = 0,
-//	deffender.DeffenderId = 'd'
-//	};
-//	SPRING_DATA spring{
-//	spring.SpringImg = 0,
-//	spring.SpringId = 's'
-//	};
-//	WIND_DATA wind{
-//	wind.WindImg = 0,
-//	wind.Windturn = 0.5f,
-//	wind.WindPercent = 10,
-//	wind.WCPInterval = 300,
-//	wind.WindId = 'w'
-//	};
-//	GOAL_DATA goal{
-//	goal.GoalImg = 0,
-//	goal.GoalId = 'g'
-//	};
-//	STICKEY_DATA stickey{
-//	stickey.StickeyImg = 0,
-//	stickey.StickeyId = 'n'
-//	};
-//	JET_DATA jet{
-//	jet.JetImg = 0,
-//	jet.JetId = 'j'
-//	};
-//	ONEUP_DATA one{
-//	one.OneupImg = 0,
-//	one.OneupId = 'o'
-//	};
-//	COIN_DATA coin{
-//	coin.CoinImg = 0,
-//	coin.CoinId = 'c'
-//	};
-//	IMAGEDATA title;
-//	IMAGEDATA titlelogo;
-//	IMAGEDATA back;
-//	IMAGEDATA clear{
-//		clear.Img = 0,
-//		clear.Px = system.WindowWidth / 2 - 200,
-//		clear.Py = system.WindowHeight / 2 - 150
-//	};
-//	IMAGEDATA failed{
-//		failed.Img = 0,
-//		failed.Px = system.WindowWidth / 2 - 200,
-//		failed.Py = system.WindowHeight / 2 - 150
-//	};
-//	IMAGEDATA gameover{
-//		gameover.Img = 0,
-//		gameover.Px = system.WindowWidth / 2 - 200,
-//		gameover.Py = system.WindowHeight / 2 - 150
-//	};
-//	IMAGEDATA dungeon;
-//	IMAGEDATA ending;
-//	IMAGEDATA feed;
+//	SYSTEM_DATA system;
+//	PLAYER_DATA player;
+//	BALL_DATA ball;
+//	DEFF_DATA deffender;
+//	SPRING_DATA spring;
+//	WIND_DATA wind;
+//	GOAL_DATA goal;
+//	STICKEY_DATA stickey;
+//	JET_DATA jet;
+//	ONEUP_DATA one;
+//	COIN_DATA coin;
+//	IMAGEDATA Backs[TYPE_MAX_BACKS];
 //};
+
+//ここまでのデータを統合したもの
+
+
+//struct SYSTEM_DATA {
+//	int PowerBarHeight = 32;
+//	float OffsetPx = 30.0f;
+//	float OffsetPy = 30.0f;
+//	float Gravity = 0.205f;
+//	float RADIAN = 3.141592f / 180;
+//};
+//struct PLAYER_DATA {
+//	float UpperArmsOffsetPx = 45;
+//	float UpperArmsOffsetPy = 5;
+//	float DownerArmsOffsetPx = 35;
+//	float DownerArmsOffsetPy = 5;
+//	float PlayerOffsetPy = 7.0f;
+//	float MaxPower = 17.0f;
+//	float PlayerAllowedDistance = 70.0f;
+//	int PlayersNum = 1;
+//	char PlayerId = 'p';
+//};
+//struct BALL_DATA {
+//	int BallsNum = 1;
+//	float InitialPx = -50.0f;
+//	float InitialPy = -2000.0f;
+//	int NotMoveCnt = 180;
+//	int ReCollisionCnt = 5;
+//	char BallId = 'b';
+//};
+//struct DEFF_DATA {
+//	char DeffenderId = 'd';
+//};
+//struct SPRING_DATA {
+//	char SpringId = 's';
+//};
+//struct WIND_DATA {
+//	float Windturn = 0.5f;
+//	int WindPercent = 10;
+//	int WCPInterval = 300;
+//	char WindId = 'w';
+//};
+//struct GOAL_DATA {
+//	char GoalId = 'g';
+//};
+//struct STICKEY_DATA {
+//	char StickeyId = 'n';
+//};
+//struct JET_DATA {
+//	char JetId = 'j';
+//};
+//struct ONEUP_DATA {
+//	char OneupId = 'o';
+//};
+//struct COIN_DATA {
+//	char CoinId = 'c';
+//};
+
+struct ALL_DATA {
+	SYSTEM_DATA system{
+	system.PowerBarHeight = 32,
+	system.OffsetPx = 30.0f,
+	system.OffsetPy = 30.0f,
+	system.Gravity = 0.205f,
+	system.RADIAN = 3.141592f / 180
+	};
+	PLAYER_DATA player{
+	player.UpperArmsOffsetPx = 45,
+	player.UpperArmsOffsetPy = 5,
+	player.DownerArmsOffsetPx = 35,
+	player.DownerArmsOffsetPy = 5,
+	player.PlayerOffsetPy = 7.0f,
+	player.MaxPower = 17.0f,
+	player.PlayersNum = 1,
+	player.PlayerAllowedDistance = 70.0f,
+	player.PlayerId = 'p'
+	};
+	BALL_DATA ball{
+	ball.BallsNum = 1,
+	ball.InitialPx = -50.0f,
+	ball.InitialPy = -2000.0f,
+	ball.NotMoveCnt = 180,
+	ball.ReCollisionCnt = 5,
+	ball.BallId = 'b'
+	};
+	DEFF_DATA deffender{
+	deffender.DeffenderId = 'd'
+	};
+	SPRING_DATA spring{
+	spring.SpringId = 's'
+	};
+	WIND_DATA wind{
+	wind.Windturn = 0.5f,
+	wind.WindPercent = 10,
+	wind.WCPInterval = 300,
+	wind.WindId = 'w'
+	};
+	GOAL_DATA goal{
+	goal.GoalId = 'g'
+	};
+	STICKEY_DATA stickey{
+	stickey.StickeyId = 'n'
+	};
+	JET_DATA jet{
+	jet.JetId = 'j'
+	};
+	ONEUP_DATA one{
+	one.OneupId = 'o'
+	};
+	COIN_DATA coin{
+	coin.CoinId = 'c'
+	};
+	IMAGEDATA Backs[TYPE_MAX_BACKS];
+	//Backs[Title];
+	//Backs[TitleLogo];
+	//Backs[Back];
+	//Backs[Clear]{
+	//	Backs[Clear].Px = 790,
+	//	Backs[Clear].Py = 390
+	//};
+	//Backs[Failed]{
+	//	Backs[Failed].Px = 790,
+	//	Backs[Failed].Py = 390
+	//};
+	//Backs[GameOver]{
+	//	Backs[GameOver].Px = 790,
+	//	Backs[GameOver].Py = 390
+	//};
+	//Backs[Dungeon];
+	//Backs[Ending];
+	//Backs[Feed];
+};
 
 class CONTAINER {
 public:
+	const char* WindowTitle = "StreetShoot!";
+	const int WindowWidth = 1920;
+	const int WindowHeight = 1080;
+	int Handle[TYPE_MAX];
 
 	//MAP
 	const char* testmap = "data/testmap.txt";
@@ -245,28 +286,29 @@ public:
 
 private:
 	CONTAINER() {
-
 		//initialize(ad.system.WindowTitle, ad.system.WindowWidth, ad.system.WindowHeight, FULLSCREEN);
-		initialize("Street_Shoot!", 1920, 1080, FULLSCREEN);
+		//initialize("Street_Shoot!", 1920, 1080, FULLSCREEN);
+		initialize(WindowTitle, WindowWidth, WindowHeight, FULLSCREEN);
 		FILE* fp = 0;
 		fopen_s(&fp, "data/SYSTEM_DATA.bin", "rb");
 		fread(&ad, sizeof(ALL_DATA), 1, fp);
 		fclose(fp);
 
+
 		//LOADIMAGE	
 		//ギミックとキャラクター
-		ad.player.BodyImg = loadImage("player2.png");
-		ad.player.LArmImg = loadImage("player1.png");
-		ad.player.RArmImg = loadImage("player4.png");
-		ad.ball.BallImg = loadImage("basketball.png");
-		ad.deffender.DeffenderImg = loadImage("difennda.png");
-		ad.spring.SpringImg = loadImage("bane omake.png");
-		ad.wind.WindImg = loadImage("kaze.png");
-		ad.goal.GoalImg = loadImage("basketgoal.png");
-		ad.coin.CoinImg = loadImage("medal.png");
-		ad.stickey.StickeyImg = loadImage("adhesive.png");
-		ad.jet.JetImg = loadImage("jetpack.png");
-		ad.one.OneupImg = loadImage("basketball.png");
+		Handle[PBody] = loadImage("player2.png");
+		Handle[PLArm] = loadImage("player1.png");
+		Handle[PRArm] = loadImage("player4.png");
+		Handle[Ball] = loadImage("basketball.png");
+		Handle[Deffender] = loadImage("difennda.png");
+		Handle[Spring] = loadImage("bane omake.png");
+		Handle[Wind] = loadImage("kaze.png");
+		Handle[Goal] = loadImage("basketgoal.png");
+		Handle[Coin] = loadImage("medal.png");
+		Handle[Stickey] = loadImage("adhesive.png");
+		Handle[Jet] = loadImage("jetpack.png");
+		Handle[Oneup] = loadImage("basketball.png");
 		blockImg = loadImage("tetu.png");
 		//ad.player.BodyImg = loadImageFromRes(PLAYER);
 		//ad.player.LArmImg = loadImageFromRes(LARM);
@@ -283,14 +325,14 @@ private:
 		//blockImg = loadImageFromRes(BLOCK);
 
 		//背景とロゴ
-		ad.title.Img = loadImage("title.png");
-		ad.titlelogo.Img = loadImage("Title_Logo.png");
-		ad.back.Img = loadImage("backGround1.png");
-		ad.dungeon.Img = loadImage("dungeon1.png");
-		ad.clear.Img = loadImage("Stage_Clear.png");
-		ad.failed.Img = loadImage("failed.png");
-		ad.gameover.Img = loadImage("GAME_OVER.png");
-		ad.ending.Img = loadImage("ending.png");
+		Handle[Title] = loadImage("title.png");
+		Handle[TitleLogo] = loadImage("Title_Logo.png");
+		Handle[Back] = loadImage("backGround1.png");
+		Handle[Clear] = loadImage("Stage_Clear.png");
+		Handle[Failed]= loadImage("failed.png");
+		Handle[GameOver]= loadImage("GAME_OVER.png");
+		Handle[Dungeon] = loadImage("dungeon1.png");
+		Handle[Ending]= loadImage("ending.png");
 		//ad.title.Img = loadImageFromRes(TITLE);
 		//ad.titlelogo.Img = loadImageFromRes(TITLE_LOGO);
 		//ad.back.Img = loadImageFromRes(BACK);
@@ -302,13 +344,13 @@ private:
 
 
 		//フェード
-		ad.feed.Img = loadImage("effect_feed.png");
+		Handle[Feed] = loadImage("effect_feed.png");
 		//ad.feed.Img = loadImageFromRes(FEED);
 
 		//システム系
-		ad.system.PowerBarImg = loadImage("powerbar.png");
+		Handle[PowerBar] = loadImage("powerbar.png");
 		arrowImg = loadImage("ya.png");
-		ad.system.PowerGaugeImg = loadImage("Gauge_Bar_1.png");
+		Handle[PowerGauge] = loadImage("Gauge_Bar_1.png");
 		//ad.system.PowerBarImg = loadImageFromRes(BAR);
 		//arrowImg = loadImageFromRes(ARROW);
 		//ad.system.PowerGaugeImg = loadImageFromRes(GAUGE);
